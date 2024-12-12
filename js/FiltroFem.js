@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: 'Impredecible',
             precio: 40000,
             precioReal: 67990,
-            imagen: 'img/prods/impredecible.jpg',
+            imagen: 'img/prods/impredecibleMysterious.jpg',
             categoria: 'esika'
         },
         {
@@ -213,15 +213,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const divisa = '$';
     const DOMitems = document.querySelector('#productos');
-    const filtroSelect = document.getElementById("filtro");
+    const filtroTodas = document.getElementById("filtro-todas");
+    const filtroEsika = document.getElementById("filtro-esika");
+    const filtroLbel = document.getElementById("filtro-lbel");
+    const filtroCyzone = document.getElementById("filtro-cyzone");
+    const ordenAsc = document.getElementById("orden-asc");
+    const ordenDesc = document.getElementById("orden-desc");
+    const ordenDefault = document.getElementById("orden-default");
 
     // Función para renderizar productos
     function renderizarProductos() {
         DOMitems.innerHTML = "";
-        const filtro = filtroSelect.value;
-        const productosFiltrados = baseDeDatos.filter(producto =>
+        let filtro = "todas";
+        if (filtroEsika.checked) {
+            filtro = "esika";
+        } else if (filtroLbel.checked) {
+            filtro = "lbel";
+        } else if (filtroCyzone.checked) {
+            filtro = "cyzone";
+        }
+
+        let productosFiltrados = baseDeDatos.filter(producto =>
             filtro === "todas" || producto.categoria === filtro
         );
+
+        if (ordenAsc.checked) {
+            productosFiltrados.sort((a, b) => a.precio - b.precio);
+        } else if (ordenDesc.checked) {
+            productosFiltrados.sort((a, b) => b.precio - a.precio);
+        }
+
         productosFiltrados.forEach((info) => {
             // Estructura de la tarjeta
             const miNodo = document.createElement('div');
@@ -245,9 +266,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Eventos
-    filtroSelect.addEventListener('change', renderizarProductos);
-
-    // Inicio
-    renderizarProductos();
-});
+        // Eventos de filtro y orden
+        filtroTodas.addEventListener('change', renderizarProductos);
+        filtroEsika.addEventListener('change', renderizarProductos);
+        filtroLbel.addEventListener('change', renderizarProductos);
+        filtroCyzone.addEventListener('change', renderizarProductos);
+        ordenAsc.addEventListener('change', renderizarProductos);
+        ordenDesc.addEventListener('change', renderizarProductos);
+        ordenDefault.addEventListener('change', renderizarProductos);
+    
+        // Inicio con todos los productos
+        renderizarProductos();
+    });
+    

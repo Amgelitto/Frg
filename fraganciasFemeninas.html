@@ -43,13 +43,41 @@
     <section class="container my-5">
         <div class="row">
             <div class="col-md-6 pb-4">
-                <div class="d-flex">
-                    <select id="filtro" class="form-control">
-                        <option value="todas">Todas</option>
-                        <option value="esika">Esika</option>
-                        <option value="lbel">L'bel</option>
-                        <option value="cyzone">Cyzone</option>
-                    </select>
+                <div class="d-flex align-items-center flex-column">
+                    <label class="mr-2">Filtrar:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="filtro" id="filtro-todas" value="todas">
+                        <label class="form-check-label" for="filtro-todas">Todas</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="filtro" id="filtro-esika" value="esika">
+                        <label class="form-check-label" for="filtro-esika">Ésika</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="filtro" id="filtro-lbel" value="lbel">
+                        <label class="form-check-label" for="filtro-lbel">L'bel</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="filtro" id="filtro-cyzone" value="cyzone">
+                        <label class="form-check-label" for="filtro-cyzone">Cyzone</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pb-4">
+                <div class="d-flex align-items-center flex-column">
+                    <label class="mr-2">Ordenar por:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="orden" id="orden-asc" value="asc">
+                        <label class="form-check-label" for="orden-asc">De menor a mayor precio</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="orden" id="orden-desc" value="desc">
+                        <label class="form-check-label" for="orden-desc">De mayor a menor precio</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="orden" id="orden-default" value="default" checked>
+                        <label class="form-check-label" for="orden-default">Ninguno</label>
+                    </div>
                 </div>
             </div>
         </div>

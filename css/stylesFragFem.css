@@ -1,13 +1,38 @@
+/* Contenedor principal de la sección */
+#productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuir espacio entre las tarjetas */
+    gap: 20px; /* Añadir espacio entre las tarjetas */
+}
+
 /* Espaciado para los elementos del producto */
 .card {
-    margin-bottom: 20px;
-    padding: 10px;
+    flex: 1 1 calc(20% - 20px); /* Ajustar el ancho para que quepan cinco tarjetas en una fila */
+    box-sizing: border-box; /* Asegurar que padding y border estén incluidos en el ancho */
+    padding: 20px;
+    margin: 10px; /* Margen alrededor de las tarjetas */
+}
+
+/* Ajustes específicos para pantallas más anchas */
+@media (min-width: 1200px) {
+    .card {
+        flex: 1 1 calc(15% - 20px); /* Ajustar el ancho para que quepan seis tarjetas en una fila */
+        max-width: calc(15% - 20px); /* Asegurar que no excedan el ancho */
+    }
 }
 
 /* Ajustes específicos para dispositivos móviles */
 @media (max-width: 767px) {
     .card {
-        margin-left: 10px;
-        margin-right: 10px;
+        flex: 1 1 calc(50% - 20px); /* Ajustar el ancho para que quepan dos tarjetas en una fila */
+        padding: 15px; /* Reducir el padding en pantallas pequeñas */
     }
+}
+
+/* Ajustes para las imágenes */
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Asegurar que las imágenes no se corten */
 }
