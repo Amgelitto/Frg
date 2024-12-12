@@ -1,0 +1,67 @@
+/* Colores acordados */
+:root {
+    --color-principal: #FFFFFF; /* Blanco */
+    --color-secundario: #E8F5E9; /* Verde Claro */
+    --color-acento: #7B1FA2; /* Púrpura */
+    --font-primary: 'Delius Swash Caps', cursive; /* Fuente para el nombre de la marca */
+    --font-secondary: 'Itim', cursive; /* Fuente para el resto de la página */
+}
+
+/* Estilos personalizados para el menú de navegación */
+#main-nav {
+    background-color: var(--color-principal);
+    border-radius: 5px; /* Añade bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra para un mejor contraste */
+}
+
+#nav-home {
+    color: var(--color-acento);
+    font-weight: bold;
+    padding: 0.5rem 1rem; /* Añade relleno al nombre de la marca */
+    font-family: var(--font-primary); /* Aplica la fuente seleccionada */
+    font-size: 2rem; /* Aumenta el tamaño de la fuente */
+}
+
+#nav-perfumeria, #nav-cosmeticos {
+    color: var(--color-acento);
+    font-family: var(--font-secondary); /* Aplica la fuente secundaria */
+    padding: 0.5rem 1rem; /* Añade relleno a los enlaces */
+}
+
+#navbarNav .dropdown-menu {
+    background-color: var(--color-secundario);
+}
+
+#navbarNav .dropdown-item {
+    color: var(--color-acento);
+    font-family: var(--font-secondary); /* Aplica la fuente secundaria a los elementos del dropdown */
+}
+
+#navbarNav .dropdown-item:hover {
+    background-color: var(--color-acento);
+    color: var(--color-principal);
+}
+
+/* Estilos para el carrusel */
+.carousel-item img {
+    max-height: 400px; /* Ajusta la altura del carrusel */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien */
+}
+
+/* Ocultar texto "Previous" y "Next" */
+.carousel-control-prev .sr-only, .carousel-control-next .sr-only {
+    display: none;
+}
+
+/* Ocultar números de los indicadores del carrusel */
+.carousel-indicators li::before {
+    display: none;
+}
+
+/* Estilos adicionales */
+body {
+    font-family: var(--font-secondary);
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
