@@ -1,0 +1,13 @@
+/* Espaciado para los elementos del producto */
+.card {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* Ajustes específicos para dispositivos móviles */
+@media (max-width: 767px) {
+    .card {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
